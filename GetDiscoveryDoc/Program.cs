@@ -3,7 +3,7 @@
 const string serverUrl = "https://demo.duendesoftware.com";
 const string discoveryUrl = ".well-known/openid-configuration";
 
-// 1. Using httpClient
+// Get discovery document using vanilla HttpClient
 var httpClient = new HttpClient();
 var discoveryStr = await httpClient.GetStringAsync($"{serverUrl}/{discoveryUrl}");
 var discoveryDoc = JsonNode.Parse(discoveryStr);
