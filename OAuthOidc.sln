@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDiscoveryDoc", "GetDiscoveryDoc\GetDiscoveryDoc.csproj", "{1FBC7275-563D-4E3B-A7EF-871017A17912}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingIdentityModel", "UsingIdentityModel\UsingIdentityModel.csproj", "{F254C90C-5CF6-4436-8195-4402BD2146D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCredentialsFlow", "ClientCredentialsFlow\ClientCredentialsFlow.csproj", "{4A17973F-BB86-4F15-BB16-3657F2F74F63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{1FBC7275-563D-4E3B-A7EF-871017A17912}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FBC7275-563D-4E3B-A7EF-871017A17912}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FBC7275-563D-4E3B-A7EF-871017A17912}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F254C90C-5CF6-4436-8195-4402BD2146D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F254C90C-5CF6-4436-8195-4402BD2146D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F254C90C-5CF6-4436-8195-4402BD2146D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F254C90C-5CF6-4436-8195-4402BD2146D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A17973F-BB86-4F15-BB16-3657F2F74F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A17973F-BB86-4F15-BB16-3657F2F74F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A17973F-BB86-4F15-BB16-3657F2F74F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A17973F-BB86-4F15-BB16-3657F2F74F63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
