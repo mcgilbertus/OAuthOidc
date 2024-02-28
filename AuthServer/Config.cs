@@ -68,6 +68,20 @@ public static class Config
                 RequirePkce = true,
                 Enabled = true
             },
+            new Client
+            {
+                // implicit flow client
+                ClientId = "client_implicit",
+                AllowedGrantTypes = GrantTypes.Implicit,
+                // secret for authentication
+                ClientSecrets = { new Secret("secret".Sha256()) },
+                // scopes that client has access to
+                AllowedScopes = { "openid", "api1.read" },
+                RedirectUris = { "https://localhost:5002/implicit/" },
+                RequirePkce = false,
+                Enabled = true,
+                AllowAccessTokensViaBrowser = true
+            },
 
             // m2m client credentials flow client
             new Client
