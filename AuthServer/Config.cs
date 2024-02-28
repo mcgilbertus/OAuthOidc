@@ -110,5 +110,19 @@ public static class Config
                 AllowOfflineAccess = true,
                 AllowedScopes = { "openid", "profile", "scope2" }
             },
+            new Client()
+            {
+                ClientId = "client_pwd",
+                ClientSecrets = { new Secret("secret".Sha256()) },
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
+                AllowedScopes = { "scope2" }
+            },
+            new Client()
+            {
+                ClientId = "client_pass",
+                RequireClientSecret = false,
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
+                AllowedScopes = { "scope2" }
+            }
         };
 }

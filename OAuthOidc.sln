@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthCodePkceFlow", "AuthCod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplicitFlow", "ImplicitFlow\ImplicitFlow.csproj", "{A119BA55-3807-4581-B548-F88FB29D4F65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwnerPasswordFlow", "OwnerPasswordFlow\OwnerPasswordFlow.csproj", "{FF2F964F-0107-4606-85F7-CAD5FB5EC86A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{A119BA55-3807-4581-B548-F88FB29D4F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A119BA55-3807-4581-B548-F88FB29D4F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A119BA55-3807-4581-B548-F88FB29D4F65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF2F964F-0107-4606-85F7-CAD5FB5EC86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2F964F-0107-4606-85F7-CAD5FB5EC86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2F964F-0107-4606-85F7-CAD5FB5EC86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2F964F-0107-4606-85F7-CAD5FB5EC86A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
