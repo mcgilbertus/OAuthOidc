@@ -14,5 +14,13 @@
         <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="keys\is-signing-key-69D93A7A6AFFECDC97F0A46800C7976B.json" />
+      <_ContentIncludedByDefault Remove="keys\is-signing-key-C560E3B39F0236129CB6A662F6496AC4.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="keys\" />
+    </ItemGroup>
 
 </Project>

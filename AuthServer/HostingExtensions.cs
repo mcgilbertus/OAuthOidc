@@ -19,14 +19,16 @@ internal static class HostingExtensions
                 options.Events.RaiseSuccessEvents = true;
 
                 // see https://docs.duendesoftware.com/identityserver/v6/fundamentals/resources/
-                options.EmitStaticAudienceClaim = true;
+                options.EmitStaticAudienceClaim = false;
             })
-            .AddTestUsers(TestUsers.Users);
+            .AddTestUsers(TestUsers.Users)
+            .AddInMemoryApiResources(Config.ApiResources);
 
         // in-memory, code config
         isBuilder.AddInMemoryIdentityResources(Config.IdentityResources);
         isBuilder.AddInMemoryApiScopes(Config.ApiScopes);
         isBuilder.AddInMemoryClients(Config.Clients);
+        isBuilder.AddInMemoryApiResources(Config.ApiResources);
 
 
         // if you want to use server-side sessions: https://blog.duendesoftware.com/posts/20220406_session_management/

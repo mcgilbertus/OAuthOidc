@@ -1,4 +1,5 @@
-﻿using DuendeIdentityServerwithIn_MemoryStoresandTestUsers1;
+﻿using Duende.IdentityServer.Models;
+using DuendeIdentityServerwithIn_MemoryStoresandTestUsers1;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()

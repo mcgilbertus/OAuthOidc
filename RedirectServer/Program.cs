@@ -1,11 +1,8 @@
-using IdentityModel;
 using IdentityModel.Client;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 
 const string VerificationStateString = "Verification_state";
-//between 45 and 128 characters! it *should* be cryptographically random. See https://www.oauth.com/oauth2-servers/pkce/authorization-request/
-const string CodeVerifier = "this_is_a_verifier_string_must_be_longer_than_45_characters";
+//between 43 and 128 characters! it *should* be cryptographically random. See https://www.oauth.com/oauth2-servers/pkce/authorization-request/
+const string CodeVerifier = "this_is_a_verifier_string_must_be_longer_than_43_characters";
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();

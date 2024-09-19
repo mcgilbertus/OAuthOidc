@@ -1,4 +1,6 @@
-﻿using System.Security.Claims;
+﻿// Config.cs
+
+using System.Security.Claims;
 using Duende.IdentityServer.Models;
 
 namespace DuendeIdentityServerwithIn_MemoryStoresandTestUsers1;
@@ -22,7 +24,22 @@ public static class Config
         {
             new ApiScope("scope1"),
             new ApiScope("scope2"),
-            new ApiScope(name: "api1.read", displayName: "api1 read access")
+            new ApiScope("api1.access", displayName: "Access to API v1", userClaims: new[]
+            {
+                "name","email","address"
+            }),
+            new ApiScope(name: "api1.read", displayName: "api1 read access"),
+            new ApiScope(name: "offline_access", displayName: "provides refresh token"),
+        };
+
+    public static IEnumerable<ApiResource> ApiResources =>
+        new ApiResource[]
+        {
+            new ApiResource("api1", "API v1")
+            {
+                Scopes = { "api1.access" },
+                // AllowedAccessTokenSigningAlgorithms = { SecurityAlgorithms.HmacSha256 }
+            }
         };
 
     public static IEnumerable<Client> Clients =>
@@ -50,10 +67,11 @@ public static class Config
                 AllowedGrantTypes = GrantTypes.Code,
                 ClientSecrets = { new Secret("secret".Sha256()) },
                 // scopes that client has access to
-                AllowedScopes = { "openid", "api1.read" },
-                RedirectUris = { "https://localhost:5002/gettokenfromcode" },
+                AllowedScopes = { "openid", "api1.read", "api1.access", "profile" },
+                RedirectUris = { "https://localhost:5002/gettokenfromcode", "http://localhost:8000/code-callback" },
                 RequirePkce = false,
-                Enabled = true
+                Enabled = true,
+                AllowOfflineAccess = false,
             },
             new Client
             {
@@ -63,8 +81,8 @@ public static class Config
                 // secret for authentication
                 ClientSecrets = { new Secret("secret".Sha256()) },
                 // scopes that client has access to
-                AllowedScopes = { "openid", "api1.read" },
-                RedirectUris = { "https://localhost:5002/gettokenfromcodepkce" },
+                AllowedScopes = { "openid", "api1.read", "api1.access", "profile" },
+                RedirectUris = { "https://localhost:5002/gettokenfromcodepkce", "http://localhost:8000/pkce-callback" },
                 RequirePkce = true,
                 Enabled = true
             },
@@ -115,14 +133,14 @@ public static class Config
                 ClientId = "client_pwd",
                 ClientSecrets = { new Secret("secret".Sha256()) },
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                AllowedScopes = { "scope2" }
+                AllowedScopes = { "api1.access", "scope2" }
             },
             new Client()
             {
-                ClientId = "client_pass",
+                ClientId = "client_nopwd",
                 RequireClientSecret = false,
                 AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                AllowedScopes = { "scope2" }
+                AllowedScopes = { "api1.access" }
             }
         };
 }
